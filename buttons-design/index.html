@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button using CSS</title>
+
+    <style>
+      body {
+        background-color: rgb(21, 21, 51);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .regular_button {
+        background: rgb(0, 132, 255);
+        border: none;
+        padding: 5px 15px;
+        border-radius: 3px;
+        color: #fff;
+        opacity: 0.9;
+        transition: all 0.5s ease;
+      }
+
+      .regular_button:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      .scale_button_animation {
+        background: rgb(0, 132, 255);
+        border: none;
+        padding: 5px 15px;
+        border-radius: 3px;
+        color: #fff;
+        opacity: 0.9;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .scale_button_animation:hover {
+        transform: scale(1.05);
+      }
+
+      .sliding_button_animation {
+        background: rgb(0, 132, 255);
+        border: none;
+        padding: 5px 15px;
+        border-radius: 3px;
+        color: #fff;
+        opacity: 0.9;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .sliding_button_animation::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        background: rgb(84, 172, 255);
+        left: -100%;
+        transform: rotate(-45deg);
+        transition: all 0.4s linear;
+        z-index: -1;
+      }
+
+      .sliding_button_animation:hover::after {
+        left: 100%;
+      }
+
+      .spliting_button_animation {
+        background: rgb(3, 212, 31);
+        border: none;
+        padding: 5px 15px;
+        border-radius: 3px;
+        color: #fff;
+        opacity: 0.9;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .spliting_button_animation::before {
+        content: "";
+        width: 50%;
+        height: 100%;
+        background-color: rgb(3, 180, 12);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        transition: all 0.3s ease;
+      }
+
+      .spliting_button_animation::after {
+        content: "";
+        width: 50%;
+        height: 100%;
+        background-color: rgb(3, 180, 12);
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        transition: all 0.3s ease;
+      }
+
+      .spliting_button_animation:hover::before {
+        width: 0%;
+      }
+      .spliting_button_animation:hover::after {
+        width: 0%;
+      }
+
+      .outline_button {
+        border: 2px solid rgb(3, 212, 31);
+        background: transparent;
+        padding: 3px 15px;
+        border-radius: 3px;
+        color: #fff;
+        opacity: 0.9;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+      .outline_button:hover {
+        background-color: rgb(3, 212, 31);
+      }
+
+      .loading_button {
+        border: none;
+        background: rgb(3, 212, 31);
+        padding: 5px 15px;
+        border-radius: 3px;
+        color: #fff;
+        opacity: 0.9;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .loading_button .loading_icon {
+        width: 10px;
+        height: 10px;
+        border: 2px solid #fff;
+        border-top: transparent;
+        border-right: transparent;
+        margin-right: 5px;
+        border-radius: 100%;
+        animation: rotate 1s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_container">
+      <div class="btn_container">
+        <button class="regular_button">Regular Btn</button>
+        <button class="scale_button_animation">Scale Btn</button>
+        <button class="sliding_button_animation">Sliding Btn</button>
+        <button class="spliting_button_animation">Spliting Btn</button>
+        <button class="outline_button">Outline Btn</button>
+        <button class="loading_button">
+          <div class="loading_icon"></div>
+          Loading...
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
