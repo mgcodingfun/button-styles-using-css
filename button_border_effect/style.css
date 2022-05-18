@@ -1,0 +1,52 @@
+/* Lets now add styles for animation */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.svg__wrapper {
+  position: relative;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.rect__shape {
+  /* left bottom top right */
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #19f6e7;
+
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+
+.text {
+  font-size: 22px;
+  color: #fff;
+  top: -45px;
+  position: relative;
+  line-height: 32px0;
+  letter-spacing: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.svg__wrapper:hover .rect__shape {
+  stroke-width: 2px;
+  cursor: pointer;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 768;
+}
